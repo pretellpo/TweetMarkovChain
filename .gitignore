@@ -1,0 +1,6 @@
+*.cmd
+Markov.bak
+Markov.dat
+Markov.dir
+settings.py
+__pycache__/
