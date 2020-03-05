@@ -20,9 +20,9 @@ exdata.close()
 
 text_model = markovify.NewlineText(parsed_text, state_size=2)	# 生成した文字列をぶっこむ
 
-output = text_model.make_short_sentence(120,tries=100) # 120文字内で生成
+output = text_model.make_short_sentence(130,tries=100) # 130文字内で生成
 
-tweet = output.replace(" ","") + " #bot #IFTTT"	# 分かち書きのスペースを除去
+tweet = output.replace(" ","") + " #bot"	# 分かち書きのスペースを除去
 
 print(tweet)
 
