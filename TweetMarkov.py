@@ -37,7 +37,5 @@ twitter = OAuth1Session(CONSUMER_KEY, CONSUMER_SECRET,
 url_tweet = "https://api.twitter.com/1.1/statuses/update.json"
 params = {"status": tweet}
 req_result = twitter.post(url_tweet ,params = params)
-if req_result.status_code == 200:
-	print("ツイート成功")
-else:
+if req_result.status_code != 200:
 	print("ERROR: %d" % req_result.status_code)
