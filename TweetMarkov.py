@@ -18,7 +18,8 @@ for i in tweet:
 
 exdata.close()
 
-text_model = markovify.NewlineText(parsed_text, state_size=2)	# 生成した文字列をぶっこむ
+STATE_SIZE = settings.STATE_SIZE
+text_model = markovify.NewlineText(parsed_text, state_size=STATE_SIZE)	# 生成した文字列をぶっこむ
 
 output = text_model.make_short_sentence(130,tries=100) # 130文字内で生成
 
