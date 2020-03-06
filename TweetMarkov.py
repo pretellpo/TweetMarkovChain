@@ -21,11 +21,11 @@ exdata.close()
 STATE_SIZE = settings.STATE_SIZE
 text_model = markovify.NewlineText(parsed_text, state_size=STATE_SIZE)	# 生成した文字列をぶっこむ
 
-output = text_model.make_short_sentence(130,tries=100) # 130文字内で生成
+output = text_model.make_short_sentence(130,tries=100).replace(" ","") # 130文字内で生成
 
-tweet = output.replace(" ","") + " #bot"	# 分かち書きのスペースを除去
+tweet = output + " #bot"	# 分かち書きのスペースを除去
 
-print(tweet)
+print(output)
 
 # 結果をツイート
 CONSUMER_KEY = settings.CONSUMER_KEY
