@@ -28,6 +28,12 @@ try:
 except:
 	tweet = []
 
+# 保存ツイート数が設定のツイート数上限より多かったら古いやつから切り落とす
+if len(tweet) > UPPER:
+	roop = len(tweet) - UPPER
+	for i in range(roop):
+		del tweet[0]
+
 url_timeline = "https://api.twitter.com/1.1/statuses/user_timeline.json"
 if since_id != 0:	# 新規かそうでないかでsince_idを使うかどうか変える（0じゃうまくいかなかった）
 	params = {'screen_name': TARGET, "count": 200, "exclude_replies":True, "since_id": since_id}
